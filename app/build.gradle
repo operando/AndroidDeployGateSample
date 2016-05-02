@@ -32,7 +32,6 @@ dependencies {
 
 deploygate {
 
-    userName = "operando"
     if (isCi) {
         token = "$System.env.DEPLOYGATE_TOKEN"
     } else {
@@ -43,7 +42,6 @@ deploygate {
         debug {
             def hash = 'git rev-parse --short HEAD'.execute([], project.rootDir).in.text.trim()
             message = " Latest master debug build ${hash}"
-//            distributionKey = "1234567890abcdef1234567890abcdef"
             releaseNote = "Latest master"
         }
     }
