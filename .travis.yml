@@ -32,7 +32,7 @@ before_script:
 
 script:
     - ./gradlew clean assembleDebug -PdisablePreDex
-    - if [[ "$TRAVIS_BRANCH" == "master" ]] && [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then ./gradlew uploadDeployGateDebug fi
+    - if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./gradlew uploadDeployGateDebug; fi
 cache:
   directories:
     - $HOME/.gradle/wrapper/
