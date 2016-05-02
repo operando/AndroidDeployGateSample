@@ -32,6 +32,7 @@ dependencies {
 
 deploygate {
 
+    userName = "operando"
     if (isCi) {
         token = "$System.env.DEPLOYGATE_TOKEN"
     } else {
