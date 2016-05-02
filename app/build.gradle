@@ -42,9 +42,9 @@ deploygate {
     apks {
         debug {
             def hash = 'git rev-parse --short HEAD'.execute([], project.rootDir).in.text.trim()
-            message = "debug build ${hash}"
+            message = " Latest master debug build ${hash}"
 //            distributionKey = "1234567890abcdef1234567890abcdef"
-            releaseNote = "release note sample"
+            releaseNote = "Latest master"
         }
     }
 }
