@@ -1,6 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'deploygate'
 
+// CI
+def isCi = "true".equals(System.getenv("CI"))
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -30,7 +33,11 @@ dependencies {
 deploygate {
 
     userName = "operando"
-    token = "$System.env.DEPLOYGATE_TOKEN"
+    if (isCi) {
+        token = "$System.env.DEPLOYGATE_TOKEN"
+    } else {
+        token = "${project.deploygate_token}"
+    }
 
     apks {
         debug {
